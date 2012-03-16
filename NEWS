@@ -1,3 +1,6 @@
+    * clean_perl: don't try to remove empty directories directly under
+      /usr/lib/perl5 (e.g. /usr/lib/perl5/vendor_perl of perl itself) (Anssi)
+
 2016-01-11 Per Øyvind Karlsen <proyvind@moondrake.org> 0.31.45
 
 	* fix_pkgconfig should always trim slashes from variable paths,
