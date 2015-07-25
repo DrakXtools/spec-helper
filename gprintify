@@ -46,10 +46,10 @@ my $var_pattern = qr/
         (?:
             \$[a-zA-Z0-9_]+            # simple variable name
             |
-            \${                        # protected variable name
+            \$\{                        # protected variable name
                 [a-zA-Z0-9_]+
-                (?:[#%]{1,2}[^}]+)?    # with optional expansion pattern
-            }
+                (?:[#%]{1,2}[^\}]+)?    # with optional expansion pattern
+            \}
         )
     )
     /x;

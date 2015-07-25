@@ -1,5 +1,6 @@
 2017-02-18 Per Øyvind Karlsen <proyvind@moondrake.org> 0.31.46
 
+    * gprintf: eliminate warnings on perl-5.22.0-and-above (Shlomi Fish)
     * clean_perl: don't try to remove empty directories directly under
       /usr/lib/perl5 (e.g. /usr/lib/perl5/vendor_perl of perl itself) (Anssi)
 
