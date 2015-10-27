@@ -1,4 +1,4 @@
-2015-10-27 Per Øyvind Karlsen <proyvind@moondrake.org> 0.13.37
+2015-10-27 Per Øyvind Karlsen <proyvind@moondrake.org> 0.13.41
 
 	* implement fix_pkgconfig to strip multiple slashes from path
 	  variable in pkg-config files, preventing ie. pkg-config --libs
