@@ -1,3 +1,6 @@
+	* fix_pkgconfig should always trim slashes from variable paths,
+	  just ensure variable holding the path exists first
+
 2015-11-19 Denis Silakov <denis.silakov@rosalab.ru> 0.31.44
 
 	* Apply ROSA patch for fix_pkgconfig to avoid calling sed

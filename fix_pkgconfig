@@ -22,14 +22,11 @@ for pc in $(find "$RPM_BUILD_ROOT" -name \*.pc); do
 	pcmodule="$(echo $pcfile|cut -d. -f1)"
 	for variable in $(pkg-config --print-variables "$pcmodule"); do
 		dir=$(pkg-config --variable="$variable" "$pcmodule")
-		if [[ "$dir" == "/"* && -d "$dir" ]]; then
-			if [ "$dir" != "`realpath $dir`" ]; then
-				parentdir=$(dirname ${dir})
-				subdir=$(basename ${dir})
-				regexp="-e s|\(${variable}=.*/${subdir}\)/.*\$|\1|g" 
-				sed $regexp $pc |tr -s // / > $pc.new
-				mv -f $pc.new $pc
-			fi
+		if [[ -n "$dir" && "$dir" != "`realpath $dir`" ]]; then
+			parentdir=$(dirname ${dir})
+			subdir=$(basename ${dir})
+			regexp="-e s|\(${variable}=.*/${subdir}\)/.*\$|\1|g -e s|\/\$||g -e s|\/\/|/|g"
+			sed $regexp -i $pc
 		fi
 	done
 done
