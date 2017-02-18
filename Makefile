@@ -64,5 +64,5 @@ dist-git:
 	git archive --prefix=$(NAME)-$(VERSION)/ HEAD | xz -v > $(NAME)-$(VERSION).tar.xz
 
 gittag:
-	git tag v$(VERSION)
-	git push origin refs/tags/v$(VERSION)
+	git tag $(NAME)-$(VERSION)
+	git push origin $(NAME)-$(VERSION)
